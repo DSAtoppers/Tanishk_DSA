@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool checkIfPangram(string s) {
+        map<char,int>m;
+        for(auto c:s){
+            m[c]++;
+        }
+        if(m.size()==26){
+            return true;
+        }
+            return false;
+    }
+};
