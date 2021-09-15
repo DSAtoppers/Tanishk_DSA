@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> intersect(vector<int>& n1, vector<int>& n2) {
+        map<int,int>m;
+        vector<int>v;
+        for(auto x:n1){
+            m[x]++;
+        }
+        for(auto x:n2){
+            if(m[x]>0){
+                m[x]--;
+                v.push_back(x);
+            }
+        }
+        return v;
+    }
+};
