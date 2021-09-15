@@ -1,0 +1,24 @@
+class Solution {
+public:
+    
+    int findKthPositive(vector<int>& a, int k) {
+        int ki=a[a.size()-1];
+        int p=0,tt=0;
+        for(int i=1;i<=ki;i++){
+            if(a[p]==i){
+                p++;
+            }
+            else{
+                tt++;
+                if(k==tt){
+                    return i;
+                }
+            }
+        }
+   
+            return k+ki-tt;
+       
+        
+       
+    }
+};

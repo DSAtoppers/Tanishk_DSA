@@ -1,0 +1,31 @@
+class Solution {
+public:
+    char nextGreatestLetter(vector<char>& letters, char target) {
+        int n=letters.size();
+        int tar=(target-'a');
+        int left=0 , right=n-1 , c=0;
+        bool flag=true;
+        while(left<=right)
+        {
+            int mid=((right-left)/2)+left;
+            int s=letters[mid]-'a'+c;
+            if(left==right && s>tar)
+            {
+                return letters[left];
+            }
+            if(s>tar)
+            {
+                right=mid;
+            }
+            else
+            {
+                left=(mid+1)%n;
+                if(left==0)
+                {
+                    c+=26;
+                }
+            }
+        }
+        return letters[left];
+    }
+};
